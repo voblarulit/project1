@@ -4,3 +4,4 @@ They should however work just fine on any device that uses Ducky Script.
 
 # Note
 Most of these scripts were designed to avoid downloading external scripts or programs.
+howerver there are scripts in this collection that will download files and execute them.
