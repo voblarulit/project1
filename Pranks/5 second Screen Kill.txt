@@ -1,5 +1,5 @@
 REM Title: 5 Second Display Kill
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to kill all displays for a short period of time.
 REM Target: Windows 10,11
 
