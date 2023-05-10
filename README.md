@@ -1,7 +1,7 @@
 # Ducky-Script-For-FlipperZero
 A collection of Duckie Scripts which have been updated specifically For badUSB function on the FlipperZero. 
 They should however work just fine on any device that uses Ducky Script.
-These scripts range from harmless pranks to nefarious red team tools. For educational purposes only! :)  
+These scripts range from harmless pranks to nefarious red team tools. For educational purposes only! 
 
 # Note
 all but one of these scripts were designed to avoid downloading external scripts or programs.
