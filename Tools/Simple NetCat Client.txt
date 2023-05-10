@@ -1,5 +1,5 @@
 REM Title: Simple NetCat Client
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to start a Netcat client that stays open until the system is restarted.
 REM Target: Windows 10
 
