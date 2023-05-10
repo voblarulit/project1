@@ -1,5 +1,5 @@
 REM Title: Invoke BSOD
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: This will open powershell and cause a blue screen.
 REM Target: Windows 10
 
