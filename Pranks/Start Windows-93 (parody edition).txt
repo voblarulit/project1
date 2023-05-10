@@ -1,5 +1,5 @@
 REM Title: Start Windows-93 (parody edition)
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Kills all running egde processes then opens edge in fullscreen on windows-93.
 REM Target: Windows 10
 
