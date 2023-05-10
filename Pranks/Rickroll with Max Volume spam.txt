@@ -1,5 +1,5 @@
 REM Title: Rickroll with Max Volume spam
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to create a .vbs script to keep volume maximised and opens youtube for rickroll.
 REM Target: Windows 10
 
