@@ -1,5 +1,5 @@
 REM Title: Invoke Fake Windows Update
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to create a .vbs script to open Chrome and fullscreen.
 REM Target: Windows 10
 
