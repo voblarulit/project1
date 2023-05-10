@@ -1,5 +1,5 @@
 REM Title: Programs and Eventlogs to File
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to gather a list of installed programs and Windows Eventlogs and saves the info to a file.
 REM Target: Windows 10
 
