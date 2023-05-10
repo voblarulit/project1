@@ -1,5 +1,5 @@
 REM Title: Email System & User Information
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to gather user and system information and send to an Email.
 REM Target: Windows 10
 
