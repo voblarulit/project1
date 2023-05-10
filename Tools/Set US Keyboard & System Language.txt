@@ -1,5 +1,5 @@
 REM Title: Set System Language
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to set the Windows system lanuage (exame is UK-US).
 REM Target: Windows 10
 
