@@ -1,5 +1,5 @@
 REM Title: Base64 Decode & Execute
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to decode a Base64 string and then execute the file.
 REM Target: Windows 10
 
