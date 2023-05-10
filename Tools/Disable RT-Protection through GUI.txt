@@ -1,5 +1,5 @@
 REM Title: Disable Real-Time Protection
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Manually opens Windows Security window and turns offf Real-Time Protection.
 REM Target: Windows 10
 
