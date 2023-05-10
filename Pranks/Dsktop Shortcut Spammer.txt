@@ -1,5 +1,5 @@
 REM Title: Dsktop Shortcut Spammer
-REM Author: @beigeworm
+REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to generate a specified amount of shortcuts on the desktop.
 REM Target: Windows 10
 
