@@ -9,25 +9,8 @@ DEFAULT_DELAY 100
 REM open cmd and kill edge.
 GUI r
 DELAY 500
-STRING cmd
+STRING cmd /c taskkill /F /IM msedge.exe & start msedge -kiosk www.windows93.net & exit
 DELAY 200
-CTRL-SHIFT ENTER
-DELAY 1000
-ALT y
-DELAY 1000
-STRING taskkill /F /IM msedge.exe /T > nul
-DELAY 100
-ENTER
-DELAY 500
-STRING exit
-ENTER
-
-REM open edge and fullscreen.
-DELAY 500
-GUI r
-DELAY 500
-STRING msedge -kiosk www.windows93.net
-DELAY 100
 ENTER
 DELAY 1000
-F11
+REM use this for fullscreen if needed <F11>
