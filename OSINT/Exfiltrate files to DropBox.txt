@@ -1,4 +1,4 @@
-REM Title: Exfiltrate To DropBox
+REM Title: Exfiltrate Files To DropBox
 REM Author: @beigeworm
 REM Description: Uses Powershell to Exfiltrate all files of all specified filetypes to a DropBox account.
 REM Target: Windows 10,11
