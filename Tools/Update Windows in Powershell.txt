@@ -1,6 +1,6 @@
 REM Title: Update from Powershell
 REM Author: @beigeworm | https://github.com/beigeworm
-REM Description: Uses the Run Prompt to download a file and run it.
+REM Description: Uses Powershell to update windows.
 REM Target: Windows 10
 
 REM *SETUP*
