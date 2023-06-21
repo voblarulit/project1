@@ -3,9 +3,6 @@ REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Uses Powershell to update windows.
 REM Target: Windows 10
 
-REM *SETUP*
-REM replace FILE_URL_HERE with the url of your file to run.
-
 REM some setup for dukie script.
 DEFAULT_DELAY 100
 
