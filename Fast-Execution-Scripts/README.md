@@ -41,12 +41,6 @@ $inMessage=Invoke-RestMethod -Method Get -Uri ($URL +'/getUpdates') -ErrorAction
 $inMessage.result.message | write-output
 $inMessage.result.message | get-member`
 
-
-5. Run Script on target System
-6. Check telegram chat for 'waiting to connect' message.
-7. this script has a feature to wait until you start the session from telegram.
-8. type in the computer name from that message into telegram bot chat to connect to that computer.
-
 #  If you like my work please leave a star. ⭐
 
 
