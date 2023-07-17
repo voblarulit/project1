@@ -1,5 +1,7 @@
 # Downloadable-Ducky-Scripts-For-FlipperZero
 
+Easy to setup with tutorials for web hooks etc below...
+
 **These scripts download and run from this repo -**
 
 https://github.com/beigeworm/assets/tree/main/Scripts
@@ -14,6 +16,36 @@ https://github.com/beigeworm/Powershell-Tools-and-Toys
 
 # Pre-Deployment Setup
 Most of these scripts will require some setup before they will work.
+
+eg. `replace DISCORD_WEBHOOK to your webhook.` etc..
+
+**Setup for Telegram, Discord, Dropbox**
+
+**DROPBOX ACCESS TOKEN SETUP**
+1. make an app at https://www.dropbox.com/developers/apps (make sure to grant full access to your new app)
+2. generate an access token for your app.
+
+**DISCORD WEBHOOK SETUP**
+1. (Server Admin Required) On a discord server chat goto > "edit channel" > "integrations" > "webhooks" 
+2. make a new webhook, name it and then click "copy webhook URL".
+
+**TELEGRAM BOT SETUP**
+1. visit https://t.me/botfather and make a bot.
+2. add bot api to script.
+3. search for bot in top left box in telegram and start a chat then type /start.
+4. add chat ID for the chat bot (use this below to find the chat id) 
+
+`$token='YOUR_TOKEN' #Replace this with your bot Token
+$URL='https://api.telegram.org/bot{0}' -f $Token
+$inMessage=Invoke-RestMethod -Method Get -Uri ($URL +'/getUpdates') -ErrorAction Stop
+$inMessage.result.message | write-output
+$inMessage.result.message | get-member`
+
+
+5. Run Script on target System
+6. Check telegram chat for 'waiting to connect' message.
+7. this script has a feature to wait until you start the session from telegram.
+8. type in the computer name from that message into telegram bot chat to connect to that computer.
 
 #  If you like my work please leave a star. ⭐
 
