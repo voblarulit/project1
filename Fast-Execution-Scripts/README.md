@@ -1,4 +1,4 @@
-# Downloadable-Ducky-Scripts-For-FlipperZero
+# Downloadable-Fast-Execution-Scripts-For-FlipperZero
 
 Easy to setup with tutorials for web hooks etc below...
 
