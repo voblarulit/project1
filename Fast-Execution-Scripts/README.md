@@ -2,7 +2,7 @@
 
 Easy to setup with tutorials for web hooks etc below...
 
-**These scripts download and run from this repo -**
+**THESE SCRIPTS DOWNLOAD AND RUN FROM THIS REPO (Parent .ps1 scripts)-**
 
 https://github.com/beigeworm/assets/tree/main/Scripts
 
