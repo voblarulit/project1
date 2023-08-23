@@ -32,12 +32,6 @@ eg. `replace DISCORD_WEBHOOK to your webhook.` etc..
 **TELEGRAM C2 CLIENT**
 1. visit https://github.com/beigeworm/Powershell-Tools-and-Toys/tree/main/Command-and-Control for more info
 
-`$token='YOUR_TOKEN' #Replace this with your bot Token
-$URL='https://api.telegram.org/bot{0}' -f $Token
-$inMessage=Invoke-RestMethod -Method Get -Uri ($URL +'/getUpdates') -ErrorAction Stop
-$inMessage.result.message | write-output
-$inMessage.result.message | get-member`
-
 #  If you like my work please leave a star. ⭐
 
 
