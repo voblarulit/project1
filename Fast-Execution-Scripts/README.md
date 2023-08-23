@@ -29,11 +29,8 @@ eg. `replace DISCORD_WEBHOOK to your webhook.` etc..
 1. (Server Admin Required) On a discord server chat goto > "edit channel" > "integrations" > "webhooks" 
 2. make a new webhook, name it and then click "copy webhook URL".
 
-**TELEGRAM BOT SETUP**
-1. visit https://t.me/botfather and make a bot.
-2. add bot api to script.
-3. search for bot in top left box in telegram and start a chat then type /start.
-4. add chat ID for the chat bot (use this below to find the chat id) 
+**TELEGRAM C2 CLIENT**
+1. visit https://github.com/beigeworm/Powershell-Tools-and-Toys/tree/main/Command-and-Control for more info
 
 `$token='YOUR_TOKEN' #Replace this with your bot Token
 $URL='https://api.telegram.org/bot{0}' -f $Token
