@@ -17,21 +17,4 @@ https://github.com/beigeworm/Powershell-Tools-and-Toys
 # Pre-Deployment Setup
 Most of these scripts will require some setup before they will work.
 
-eg. `replace DISCORD_WEBHOOK to your webhook.` etc..
-
-**Setup for Telegram, Discord, Dropbox**
-
-**DROPBOX ACCESS TOKEN SETUP**
-1. make an app at https://www.dropbox.com/developers/apps (make sure to grant full access to your new app)
-2. generate an access token for your app.
-
-**DISCORD WEBHOOK SETUP**
-1. (Server Admin Required) On a discord server chat goto > "edit channel" > "integrations" > "webhooks" 
-2. make a new webhook, name it and then click "copy webhook URL".
-
-**TELEGRAM C2 CLIENT**
-1. visit https://github.com/beigeworm/Powershell-Tools-and-Toys/tree/main/Command-and-Control for more info
-
-#  If you like my work please leave a star. ⭐
-
 
