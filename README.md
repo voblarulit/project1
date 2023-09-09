@@ -22,7 +22,6 @@ Make sure to read through all the scripts and follow any setup instructions.
 2. make a new webhook, name it and then click "copy webhook URL".
 
 **TELEGRAM TOKEN SETUP**
-**TELEGRAM SETUP INSTRUCTIONS**
 ----------------------
  1. Install Telegram and make an account if you haven't already.
 
