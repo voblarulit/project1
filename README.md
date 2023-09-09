@@ -26,7 +26,7 @@ Make sure to read through all the scripts and follow any setup instructions.
  2. Visit https://t.me/botfather and make a bot. (make a note of the API token)
  3. Click the provided link to open the chat E.G. "t.me/****bot" then type or click /start)
 
-*visit https://github.com/beigeworm/Powershell-Tools-and-Toys/tree/main/Command-and-Control for more info*
+***visit https://github.com/beigeworm/Powershell-Tools-and-Toys/tree/main/Command-and-Control for more info***
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 #  If you like my work please leave a star. ⭐
