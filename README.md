@@ -22,22 +22,9 @@ Make sure to read through all the scripts and follow any setup instructions.
 2. make a new webhook, name it and then click "copy webhook URL".
 
 **TELEGRAM TOKEN SETUP**
-----------------------
  1. Install Telegram and make an account if you haven't already.
-
  2. Visit https://t.me/botfather and make a bot. (make a note of the API token)
- 
  3. Click the provided link to open the chat E.G. "t.me/****bot" then type or click /start)
-
- 4. At the start off the the Script - Replace `$tg` with your Telegram Bot API Token (only when running ps1 directly (not changed using Flipper, VBScript etc as it should be pre-defined there.. eg. `$tg = 'TOKEN'`))
- 
- 5. Run the script on target system
- 
- 6. Check telegram chat for 'waiting to connect' message.
- 
- 7. This script has a feature to wait until you start the session from Telegram.
- 
- 8. Type the computer name from the 'waiting' message into Telegram bot chat to connect to that computer's session.
 
 *visit https://github.com/beigeworm/Powershell-Tools-and-Toys/tree/main/Command-and-Control for more info*
 ----------------------------------------------------------------------------------------------------------------------------------------------------
