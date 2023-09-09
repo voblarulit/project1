@@ -27,4 +27,8 @@ Make sure to read through all the scripts and follow any setup instructions.
 #  If you like my work please leave a star. ⭐
 
 # Note
-all but one of these scripts were designed to avoid downloading external scripts or programs.
+Fast-Execution-Scripts are pulled from github and staged using the 'Invoke-Expession' command.
+
+All other scripts were designed to avoid downloading external scripts or programs.
+
+
