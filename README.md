@@ -1,5 +1,5 @@
 # Ducky-Script-For-FlipperZero
-A collection of Duckie Scripts which have been updated specifically For badUSB function on the FlipperZero. 
+This repository is a collection of scripts which have been updated specifically For the BadUSB/BadKB function on FlipperZero. 
 They should however work just fine on any device that uses Ducky Script.
 These scripts range from harmless pranks to nefarious red team tools. For educational purposes only! 
 
@@ -16,6 +16,7 @@ Make sure to read through all the scripts and follow any setup instructions.
 **DROPBOX ACCESS TOKEN SETUP**
 1. make an app at https://www.dropbox.com/developers/apps (make sure to grant full access to your new app)
 2. generate an access token for your app.
+(Dropbox access tokens expire after 7 days.)
 
 **DISCORD WEBHOOK SETUP**
 1. (Server Admin Required) On a discord server chat goto > "edit channel" > "integrations" > "webhooks" 
