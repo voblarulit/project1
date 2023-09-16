@@ -33,8 +33,8 @@ Make sure to read through all the scripts and follow any setup instructions.
 
 **Notes**
 
-Fast-Execution-Scripts are pulled from github and staged using the 'Invoke-Expession' command.
+Fast-Execution-Scripts and GUI-Tools are pulled from github and staged using the 'Invoke-Expession' command.
 
-All other scripts were designed to avoid downloading external scripts or programs.
+Most other scripts were designed to avoid downloading external scripts or programs.
 
 
