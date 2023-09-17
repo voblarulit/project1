@@ -2,6 +2,7 @@ REM Title: beigeworm's Telegram Command And Control.
 REM Author: @beigeworm
 REM Description: Using a Telegram Bot's Chat to Act as a Command and Control Platform.
 REM Target: Windows 10 and 11
+REM : More info at https://github.com/beigeworm/Powershell-Tools-and-Toys/tree/main/Command-and-Control
 
 REM SETUP INSTRUCTIONS
 REM 1. visit https://t.me/botfather and make a bot.
