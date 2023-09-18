@@ -13,6 +13,11 @@ https://github.com/beigeworm/Powershell-Tools-and-Toys
 # Pre-Deployment Setup
 Most of these scripts will require some setup before they will work.
 
-**THESE SCRIPTS DOWNLOAD AND RUN FROM THIS REPO (Parent .ps1 scripts)-**
+Setup Instructions are within the payload files.
+
+--------------------------------------------------------------------------------
+**These Scripts Are Pulled From This Repository**
 
 https://github.com/beigeworm/assets/tree/main/Scripts
+
+**You Should ALWAYS Read Any Scripts BEFORE running them**
