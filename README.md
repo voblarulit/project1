@@ -29,6 +29,10 @@ Make sure to read through all the scripts and follow any setup instructions.
  4. Visit https://github.com/beigeworm/Powershell-Tools-and-Toys/tree/main/Command-and-Control for more info
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
+Further setup instructions are within each payload file (if applicable).
+
+**You Should ALWAYS Read Any Scripts BEFORE running them**
+
 #  If you like my work please leave a star. ⭐
 
 **Notes**
