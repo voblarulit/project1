@@ -39,4 +39,4 @@ Fast-Execution-Scripts and GUI-Tools are pulled from github and staged using the
 
 Most other scripts were designed to avoid downloading external scripts or programs.
 
-
+# If you like my work please leave a star. ⭐
