@@ -3,6 +3,7 @@ This repository is a collection of scripts which have been updated specifically 
 They should however work just fine on any device that uses Ducky Script.
 These scripts range from harmless pranks to nefarious red team tools. For educational purposes only! 
 
+# These payloads are all for Windows systems.
 **If you want to learn more about the code, most of these scripts are in powershell format here**
 
 https://github.com/beigeworm/Powershell-Tools-and-Toys
@@ -38,5 +39,3 @@ Further setup instructions are within each payload file (if applicable).
 Fast-Execution-Scripts and GUI-Tools are pulled from github and staged using the 'Invoke-Expession' command.
 
 Most other scripts were designed to avoid downloading external scripts or programs.
-
-# If you like my work please leave a star. ⭐
