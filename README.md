@@ -7,7 +7,11 @@ These scripts range from harmless pranks to nefarious red team tools. For educat
 
 **If you want to learn more about the code, most of these scripts are in powershell format here**
 
-https://github.com/beigeworm/Powershell-Tools-and-Toys
+https://github.com/beigeworm/Powershell-Tools-and-Toys - Repository of 50+ powewrshell scripts.
+
+https://github.com/beigeworm/PoshGram-C2 - A Telegram C2 client in powrshell.
+
+https://github.com/beigeworm/PoshCord-C2 - A Discord C2 client in powershell.
 
 # Pre-Deployment Setup
 Most of these scripts will require some setup before they will work.
