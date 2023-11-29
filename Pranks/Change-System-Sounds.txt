@@ -3,7 +3,7 @@ REM Author: @beigeworm | https://github.com/beigeworm
 REM Description: Download any sound and set system event sounds to that file.
 REM Target: Windows 10,11
 
-REM Change WAV_FILE_URL_HERE to a hosted .wav file online OR define a local file below.
+REM Change WAV_FILE_URL_HERE to a hosted .wav file online OR define a local file below (all default sounds are in C:/Windows/Media)
 REM you can restore default sounds in control panel
 
 DEFAULT_DELAY 100
