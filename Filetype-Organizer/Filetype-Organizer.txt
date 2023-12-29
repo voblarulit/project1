@@ -11,6 +11,6 @@ REM open powershell (remove -W Hidden to show the window)
 DELAY 1000
 GUI r
 DELAY 750
-STRING powershell -NoP -Ep Bypass -W H -C cd $env:USERPROFILE ;irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Filetype-Organizer/main.ps1 | iex
+STRING powershell -NoP -Ep Bypass -C cd $env:USERPROFILE ;irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Filetype-Organizer/main.ps1 | iex
 ENTER
 
