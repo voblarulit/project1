@@ -10,5 +10,4 @@ USAGE
 3. test by going to a website in chrome browser (eg. google.com) and type some keys
 4. Wait 30 seconds and check webhook for results. 
 
-CREDIT
-Kudos and credit to jakov for the js code!
+CREDITS - Kudos and credit to jakov for the js code!
