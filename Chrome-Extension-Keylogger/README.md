@@ -1,6 +1,7 @@
 <h2 align="center"> Keylogger To WebHook - Chrome Extension </h2>
 
 SYNOPSIS
+
 Creates the neccessary files for a chrome extension that logs all keystrokes on any website.
 Then sends the collected keys to a discord webhook.
 
