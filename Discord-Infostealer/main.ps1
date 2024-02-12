@@ -168,8 +168,9 @@ $infomessage = "
 "
 
 $infomessage1 = "``````
+=============================================================
 User Information
-------------------------------------------------------------
+-------------------------------------------------------------
 Current User          : $env:USERNAME
 Email Address         : $email
 Language              : $systemLanguage
