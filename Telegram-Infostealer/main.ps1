@@ -259,7 +259,7 @@ $process
 
 =================================================================================================================================="
 
-$outpath = "$env:USERPROFILE/Desktop/systeminfo.txt"
+$outpath = "$env:TEMP/systeminfo.txt"
 
 $contents | Out-File -FilePath $outpath -Encoding ASCII -Append
 $infomessage2 | Out-File -FilePath $outpath -Encoding ASCII -Append
