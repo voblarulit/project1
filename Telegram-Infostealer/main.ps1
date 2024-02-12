@@ -1,4 +1,6 @@
-﻿$token= "$tg"
+# TELEGRAM SYSTEM INFORMATION
+
+$token= "$tg"
 $apiUrl = "https://api.telegram.org/bot$Token/sendMessage"
 $URL = 'https://api.telegram.org/bot{0}' -f $Token
 
