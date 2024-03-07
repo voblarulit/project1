@@ -17,12 +17,16 @@ Every 10 seconds it will check a file for a change in the file contents and inte
 
 **SETUP**
 1. make a discord bot at https://discord.com/developers/applications/
-2. add the bot to your discord server
-3. create a webhook in the desired channel on your server. ( channel-settings/integrations )
-4. FLIPPER ONLY - goto https://t.ly and make a short link for the webhook. (run prompt only allows 256 characters!)
-5. Change WEBHOOK_URL below to your short webhook URL eg. https://t.ly/byuf4e
-6. Change BOT_TOKEN below with your bot token
-7. Change CHANNEL_ID below to the channel id of your webhook.
+2. in bot > server intents turn on everything
+3. add the bot to your discord server (oauth > copy link) copy link
+
+![Screenshot_1](https://github.com/beigeworm/BadUSB-Files-For-FlipperZero/assets/93350544/b3fe7785-dcf3-4971-99f0-f3456ddc34ef)
+
+4. create a webhook in the desired channel on your server. ( channel-settings/integrations )
+5. FLIPPER ONLY - goto https://t.ly and make a short link for the webhook. (run prompt only allows 256 characters!)
+6. Change WEBHOOK_URL below to your short webhook URL eg. https://t.ly/byuf4e
+7. Change BOT_TOKEN below with your bot token
+8. Change CHANNEL_ID below to the channel id of your webhook.
 
 **USAGE**
 1. Setup the script
