@@ -6,6 +6,8 @@ MAIN SCRIPT HERE - https://github.com/beigeworm/PoshCord-C2
 
 Using a Discord webhook and a hosted text file to Act as a Command and Control Platform.
 
+![a](https://github.com/beigeworm/BadUSB-Files-For-FlipperZero/assets/93350544/fbd9e46b-5ba2-402b-ac7e-4464985e085a)
+
 **INFORMATION**
 
 This script will wait until it notices a change in the contents of a text file hosted online (eg. github/pastebin).
