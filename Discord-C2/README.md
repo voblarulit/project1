@@ -16,10 +16,13 @@ Every 10 seconds it will check for a new message in chat and interpret it as a c
 **SETUP**
 1. make a discord bot at https://discord.com/developers/applications/
 2. add the bot to your discord server
-3. create a webhook in the desired channel on your server. ( channel-settings/integrations )
-3. Change $dc below to your webhook URL eg. https://discord.com/api/webhooks/123445623531/f4fw3f4r46r44343t5gxxxxxx
-4. Change $tk below with your bot token
-5. Change $ch below to the channel id of your webhook.
+3. Give these permissions in Oauth2 tab and copy link into a browser url bar
+
+![Screenshot_1](https://github.com/beigeworm/PoshCord-C2/assets/93350544/b8634f20-7d76-48fb-a159-89ac02303abd)
+
+4. Click 'Reset Token' in "Bot" tab for your token
+5. Change $tk below with your bot token
+6. Change $ch below to the channel id of your channel.
 
 **USAGE**
 1. Setup the script
@@ -72,7 +75,8 @@ Every 10 seconds it will check for a new message in chat and interpret it as a c
 - **ExtraInfo**: Get a list of further info and command examples
 - **Cleanup**: Wipe history (run prompt, powershell, recycle bin, Temp)
 - **Kill**: Stop a running module (eg. Keycapture / Exfiltrate)
-- **Control-All**: Control all waiting sessions simultaneously
+- **ControlAll**: Control all waiting sessions simultaneously
+- **ShowAll**: Control all waiting sessions simultaneously
 - **Pause**: Pause the current authenticated session
 - **Close**: Close this session
 
@@ -90,3 +94,5 @@ Control all waiting sessions simultaneously with 'controll-all' to mass authenti
 **Killswitch**
 
 Save a hosted file contents as 'kill' to stop 'KeyCapture' or 'Exfiltrate' command and return to waiting for commands.
+
+# If you like my work please leave a star. ⭐
