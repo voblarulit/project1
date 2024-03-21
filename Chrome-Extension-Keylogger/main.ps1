@@ -139,24 +139,24 @@ $manifest | Out-File -FilePath "$DirPath/manifest.json" -Encoding utf8 -Force
 # Send keys to manually open chrome and add extension
 $wshell = New-Object -ComObject wscript.shell
 Start-Process chrome.exe example.com
-sleep 5
+sleep 7
 $wshell.AppActivate("chrome.exe")
-$wshell.SendKeys("{TAB}") ;sleep -m 100
-$wshell.SendKeys("{TAB}") ;sleep -m 100
-$wshell.SendKeys("{TAB}") ;sleep -m 100
-$wshell.SendKeys("chrome://extensions/") ;sleep -m 100
-$wshell.SendKeys("{ENTER}") ;sleep 3
-$wshell.SendKeys("{TAB}") ;sleep -m 100
-$wshell.SendKeys(" ") ;sleep 2
-$wshell.SendKeys("{TAB}") ;sleep -m 100
-$wshell.SendKeys("{ENTER}") ;sleep 2
-$wshell.SendKeys("C:\Users\Public\Chrome");sleep -m 100
-$wshell.SendKeys("{ENTER}") ;sleep -m 200
-$wshell.SendKeys("{BACKSPACE}") ;sleep -m 100
+$wshell.SendKeys("{TAB}") ;sleep -m 500
+$wshell.SendKeys("{TAB}") ;sleep -m 500
+$wshell.SendKeys("{TAB}") ;sleep -m 500
+$wshell.SendKeys("chrome://extensions/") ;sleep -m 500
+$wshell.SendKeys("{ENTER}") ;sleep 4
+$wshell.SendKeys("{TAB}") ;sleep -m 500
+$wshell.SendKeys(" ") ;sleep 4
+$wshell.SendKeys("{TAB}") ;sleep -m 500
+$wshell.SendKeys("{ENTER}") ;sleep 4
+$wshell.SendKeys("C:\Users\Public\Chrome");sleep -m 500
+$wshell.SendKeys("{ENTER}") ;sleep -m 1000
+$wshell.SendKeys("{BACKSPACE}") ;sleep -m 500
 $wshell.SendKeys("{ENTER}")
 
 # Kill Chrome process
-sleep 3
+sleep 4
 $wshell.SendKeys("%{F4}")
 
 <#
