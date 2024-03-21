@@ -147,7 +147,7 @@ $wshell.SendKeys("{TAB}") ;sleep -m 500
 $wshell.SendKeys("chrome://extensions/") ;sleep -m 500
 $wshell.SendKeys("{ENTER}") ;sleep 4
 $wshell.SendKeys("{TAB}") ;sleep -m 500
-$wshell.SendKeys(" ") ;sleep 4
+$wshell.SendKeys(" ") ;sleep 2
 $wshell.SendKeys("{TAB}") ;sleep -m 500
 $wshell.SendKeys("{ENTER}") ;sleep 4
 $wshell.SendKeys("C:\Users\Public\Chrome");sleep -m 500
