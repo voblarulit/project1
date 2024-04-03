@@ -3,7 +3,7 @@ if ($dc.Length -eq 0){
 write-host "No webhook supplied"
 }
 
-$hideWindow = 1 # 1 = Hidden
+$hideWindow = 0 # 1 = Hidden
 
 [Console]::BackgroundColor = "Black"
 [Console]::SetWindowSize(60, 20)
