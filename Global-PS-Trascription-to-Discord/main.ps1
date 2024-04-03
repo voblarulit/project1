@@ -1,6 +1,6 @@
 $webhookUrl = "$dc"
 
-$hideWindow = 0 # 1 = Hidden
+$hideWindow = 1 # 1 = Hidden
 
 [Console]::BackgroundColor = "Black"
 [Console]::SetWindowSize(60, 20)
