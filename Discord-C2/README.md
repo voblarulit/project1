@@ -14,30 +14,39 @@ Every 10 seconds it will check for a new message in chat and interpret it as a c
 ![GIF 3-14-2024 7-18-11 PM](https://github.com/beigeworm/PoshCord-C2/assets/93350544/d1805cf3-f850-45c1-b4d2-c342cc17ecdb)
 
 **SETUP**
-1. make a discord bot at https://discord.com/developers/applications/
-2. add the bot to your discord server
+1. Make a discord bot at https://discord.com/developers/applications/
+2. Turn on ALL intents in the 'Bot' tab.
+
+![image](https://github.com/beigeworm/PoshCord-C2/assets/93350544/f4b381b1-9217-4469-90de-e913681aecd6)
+
 3. Give these permissions in Oauth2 tab and copy link into a browser url bar
 
-![Screenshot_1](https://github.com/beigeworm/PoshCord-C2/assets/93350544/b8634f20-7d76-48fb-a159-89ac02303abd)
+![Screenshot_1](https://github.com/beigeworm/PoshCord-C2/assets/93350544/1c944403-b4b0-4730-bc53-c958f4082ef9)
 
-4. Click 'Reset Token' in "Bot" tab for your token
-5. Change $tk below with your bot token
-6. Change $ch below to the channel id of your channel.
+4. add the bot to your discord server
+5. Click 'Reset Token' in "Bot" tab for your token
+6. Change $tk below with your bot token
+7. Change $ch below to the channel id of your channel.
 
 **USAGE**
 1. Setup the script
 2. Run the script on a target.
 3. Check discord for 'waiting to connect..' message.
-4. Edit the contents of your hosted file to contain 'options' to get a list of modules
-5. Do the same with any other command listed - To run that module.
+4. Type the computers name into chat to start a session
+5. The session will be started in a newly created channel - (unles you use -nonew to use the maseter channel eg. `DESKTOP-3DG5fS -nonew`) 
+6. Use the commands listed below
 
-**MODULES**
+**MODULES / COMMANDS**
+
+*Write these in chat to run on the target.*
+
 - **SpeechToText**: Send audio transcript to Discord
 - **QuickInfo**: Send a quick System info embed (sent on first connect)
 - **Systeminfo**: Send System info as text file to Discord
 - **FolderTree**: Save folder trees to file and send to Discord
 - **EnumerateLAN**: Show devices on LAN (see ExtraInfo)
 - **NearbyWifi**: Show nearby wifi networks (!user popup!)
+- **ChromeDB**:  Gather Database files from Chrome and send to Discord (view them in DBBrowser.exe)
 
 - **AddPersistance**: Add this script to startup.
 - **RemovePersistance**: Remove Poshcord from startup
@@ -53,7 +62,8 @@ Every 10 seconds it will check for a new message in chat and interpret it as a c
 - **RecordScreen**: Record Screen and send to Discord
 - **TakePicture**: Send a webcam picture and send to Discord
 - **Exfiltrate**: Send various files. (see ExtraInfo)
-- **Upload**: Upload a file. (see ExtraInfo)
+- **Upload**: Upload a file from connected machine. (see ExtraInfo)
+- **Download**: Download a file to the current directory on the client. (attach a file with the command)
 - **Screenshot**: Sends a screenshot of the desktop and send to Discord
 - **Keycapture**: Capture Keystrokes and send to Discord
 
